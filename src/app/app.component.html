@@ -1,0 +1,68 @@
+<router-outlet></router-outlet>
+
+<div class="mat-app-background home">
+  <mat-toolbar class="mat-elevation-z10" color="primary">
+    <img src="assets/logo.png" height="40" width="160" style="margin-right: 10px;">
+    <span class="fill-remaining-space"></span>
+    <img src="assets/FER_logo.png" height="20" width="46" style="margin-left: 10px;">
+  </mat-toolbar>
+
+  <div class="text-input" [formGroup]="form">
+
+    <mat-form-field appearance="standard">
+      <mat-label>Input text</mat-label>
+      <input matInput id="text" formControlName="text" style="text-transform: uppercase">
+      <mat-error *ngIf="!text.valid && (text.dirty || text.touched) && text.errors.required">Input cannot be empty!</mat-error>
+      <mat-error *ngIf="!text.valid && (text.dirty || text.touched) && text.errors.pattern">Only letters are allowed!</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="!form.valid" (click)="submitInput()">Submit</button>
+
+    <h2>or</h2>
+  
+    <button mat-raised-button (click)="openInput()">Select File to Upload</button>
+    <input id="fileInput" hidden type="file" (change)="fileChange($event.target.files)" name="file" accept=".txt">
+
+  </div>
+
+  <div *ngIf=inputText>
+    <mat-divider></mat-divider>
+  
+    <div class="select-text">
+      <h2>Algorithm selection</h2>
+    </div>
+    
+    <div class="button-row">
+      <button mat-raised-button (click)="openDialog()">Caesar cipher</button>
+      <button mat-raised-button>Nothing</button>
+      <button mat-raised-button>Empty</button>
+      <button mat-raised-button>Placeholder</button>
+      <button mat-raised-button>Dummy</button>
+    </div>
+  </div>
+
+  <div *ngIf=cipherText>
+    <mat-divider></mat-divider>
+
+    <div class="select-text">
+      <h2>Ciphered text</h2>
+    </div>
+
+    <div class="result-header">
+      <h3>Execution time: {{executionTime}}ms</h3> 
+      <button class="clear" mat-stroked-button (click)="clearText()">Clear</button>
+    </div>
+  
+    <div class="result">
+      {{ cipherText }}
+    </div> 
+  </div>
+
+  <div class="footer"> Gabriel Matić, 2020</div>
+</div>
+
+<app-caesar-cipher
+  [shift] = "shift"
+  [inputText] = "inputText"
+  (cipherResult)="displayCipherText($event)"
+></app-caesar-cipher>

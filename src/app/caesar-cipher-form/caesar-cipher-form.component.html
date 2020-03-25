@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+  <div mat-dialog-content>
+    <p>Select the shift</p>
+    <mat-form-field appearance="standard">
+      <mat-label>Shift</mat-label>
+      <input #selectedShift matInput formControlName="shift" type="number" required>
+      <mat-error>Shift is required!</mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button type="submit" [disabled]="!form.valid">Ok</button>
+    <button mat-button type="button" mat-dialog-close>Cancel</button>
+  </div>
+</form>
+
