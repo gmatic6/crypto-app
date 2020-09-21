@@ -34,10 +34,10 @@
     
     <div class="button-row">
       <button mat-raised-button (click)="openDialog()">Caesar cipher</button>
-      <button mat-raised-button>Nothing</button>
-      <button mat-raised-button>Empty</button>
-      <button mat-raised-button>Placeholder</button>
-      <button mat-raised-button>Dummy</button>
+      <button mat-raised-button (click)="openRSADialog()">RSA</button>
+      <button mat-raised-button (click)="openZigZagDialog()">Zig-Zag cipher</button>
+      <button mat-raised-button (click)="openEnigmaDialog()">Enigma</button>
+      <button mat-raised-button (click)="openAESDialog()">AES</button>
     </div>
   </div>
 
@@ -53,7 +53,7 @@
       <button class="clear" mat-stroked-button (click)="clearText()">Clear</button>
     </div>
   
-    <div class="result">
+    <div [innerHTML]="cipherText" class="result">
       {{ cipherText }}
     </div> 
   </div>
@@ -66,3 +66,27 @@
   [inputText] = "inputText"
   (cipherResult)="displayCipherText($event)"
 ></app-caesar-cipher>
+
+<app-rsa-encryption
+  [inputText] = "inputText"
+  [strength] = "variant"
+  (cipherResult)="displayCipherText($event)"
+></app-rsa-encryption>
+
+<app-zig-zag
+  [rows] = "rows"
+  [inputText] = "inputText"
+  (cipherResult)="displayCipherText($event)"
+></app-zig-zag>
+
+<app-enigma
+  [config] = "rotors"
+  [inputText] = "inputText"
+  (cipherResult)="displayCipherText($event)"
+></app-enigma>
+
+<app-aes-encryption
+  [keyLength] = "keyLength"
+  [inputText] = "inputText"
+  (cipherResult)="displayCipherText($event)"
+></app-aes-encryption>

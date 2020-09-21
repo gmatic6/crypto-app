@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div mat-dialog-content>
+        <p>Select rotor positions</p>
+        <mat-form-field appearance="standard">
+            <mat-label>Rotor 1</mat-label>
+            <input #selectedRows matInput formControlName="rotor1" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Rotor 2</mat-label>
+            <input #selectedRows matInput formControlName="rotor2" type="number">
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Rotor 3</mat-label>
+            <input #selectedRows matInput formControlName="rotor3" type="number">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button type="submit" [disabled]="!form.valid">Ok</button>
+        <button mat-button type="button" mat-dialog-close>Cancel</button>
+    </div>
+</form>
+  
+  

@@ -54,12 +54,28 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
+import { RsaEncryptionComponent } from './rsa-encryption/rsa-encryption.component';
+import { RsaEncryptionFormComponent } from './rsa-encryption-form/rsa-encryption-form.component';
+import { ZigZagComponent } from './zig-zag/zig-zag.component';
+import { ZigZagFormComponent } from './zig-zag-form/zig-zag-form.component';
+import { EnigmaFormComponent } from './enigma-form/enigma-form.component';
+import { EnigmaComponent } from './enigma/enigma.component';
+import { AesEncryptionComponent } from './aes-encryption/aes-encryption.component';
+import { AesEncryptionFormComponent } from './aes-encryption-form/aes-encryption-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CaesarCipherComponent,
-    CaesarCipherFormComponent
+    CaesarCipherFormComponent,
+    RsaEncryptionComponent,
+    RsaEncryptionFormComponent,
+    ZigZagComponent,
+    ZigZagFormComponent,
+    EnigmaFormComponent,
+    EnigmaComponent,
+    AesEncryptionComponent,
+    AesEncryptionFormComponent
   ],
 
   imports: [

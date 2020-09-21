@@ -8,7 +8,7 @@ import { AppComponent } from '../app.component';
   templateUrl: './caesar-cipher-form.component.html',
   styleUrls: ['./caesar-cipher-form.component.css']
 })
-export class CaesarCipherFormComponent implements OnInit{
+export class CaesarCipherFormComponent implements OnInit {
 
   form: FormGroup;
 

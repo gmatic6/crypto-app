@@ -1,0 +1,14 @@
+.mat-dialog-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.mat-radio-button {
+    padding-right: 40px;
+}
+
+
+::ng-deep .mat-dialog-container {
+    background-color: #303030;
+}
+

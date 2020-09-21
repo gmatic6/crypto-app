@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+    <mat-radio-group [(ngModel)]="strength" aria-label="Select RSA strength">
+        <mat-radio-button value="Strong">Strong</mat-radio-button>
+        <mat-radio-button value="Weak">Weak</mat-radio-button>
+    </mat-radio-group>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSubmit()">Ok</button>
+    <button mat-button type="button" mat-dialog-close>Cancel</button>
+</div>
+
+

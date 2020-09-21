@@ -45,10 +45,10 @@ export class CaesarCipherComponent implements OnInit {
   }
 
   private caesarCipher(inputText: string, shift: number) {
+    const startFrom = new Date().getTime();
     const asciiCode: number[] = [];
     const upperText = inputText.toLocaleUpperCase('en-US');
     let cipherText = '';
-    const startFrom = new Date().getTime();
 
     for (let i = 0; i < upperText.length; i++) {
 

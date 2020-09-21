@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <mat-radio-group [(ngModel)]="keyLength" aria-label="Select key length">
+        <mat-radio-button value="16">128-bit</mat-radio-button>
+        <mat-radio-button value="24">192-bit</mat-radio-button>
+        <mat-radio-button value="32">256-bit</mat-radio-button>
+    </mat-radio-group>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onSubmit()">Ok</button>
+    <button mat-button type="button" mat-dialog-close>Cancel</button>
+</div>
