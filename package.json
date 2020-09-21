@@ -24,7 +24,7 @@
     "big-integer": "^1.6.48",
     "fractional": "^1.0.0",
     "hex2dec": "^1.1.2",
-    "node-forge": "^0.9.1",
+    "node-forge": "^0.10.0",
     "node-rsa": "^1.0.8",
     "num2fraction": "^1.2.2",
     "rxjs": "~6.5.4",
